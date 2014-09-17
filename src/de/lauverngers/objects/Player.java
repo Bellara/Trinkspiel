@@ -17,6 +17,10 @@ public class Player {
         credits += addCredits;
     }
 
+    public void decreaseCredit(int creditLoss) {
+        credits -= creditLoss;
+    }
+
     public String getName() {
         return name;
     }
