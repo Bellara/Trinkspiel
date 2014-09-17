@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+
+<challenges>
+    <challenge title="Kraftprobe" credits="{x}" action="dice">
+        Mache {x} Liegestütze! Für jede so erbrachte Leistung bekommt du einen Finger Bier.
+    </challenge>
+
+    <challenge title="Razzia" credits="{x}" action="dice">
+        Renne {x} Runden ums Haus/Sofa/... in jeder Runde bekommst du 2 Finger Bier zugesteckt.
+    </challenge>
+
+    <challenge title="Beichte" credits="1">
+        Rufe jemanden an und beichte ihm, dass du trinkst. Beende das Gespräch mit einem Killer.
+    </challenge>
+
+    <challenge title="Goldkelchen" credits="1">
+        Gurgel ein Lied mit 2 Finger Bier. Die anderen dürfen gerne mitmachen!
+    </challenge>
+
+    <challenge title="Giftmischer" credits="2" action="dice">
+        Mische je eine Einheiten {x} Getränks und trinke das Gebräu.
+    </challenge>
+
+    <challenge title="Verhör" credits="1">
+        Beantworte den anderen eine persönliche Frage. Die Anderen bekommen für die verwerfliche Frage alle 2 Finger Bier.
+    </challenge>
+
+    <challenge title="Gib mir Tiernamen" credits="1">
+        Imitiere ein Tier, das die anderen bestimmen. Bewegung und Geräusche inklusive!
+    </challenge>
+
+    <challenge title="Untertauchen" credits="0">
+        Du heißt aber jetzt Frank! Alle anderen müssen dich so ansprechen, also auch keine Kosenamen.
+    </challenge>
+
+    <challenge title="Banküberfall" credits="0">
+        Schreit alle "Hände hoch!" und reißt die Hände hoch. Der letzte bekommt einen Killer und 1 Finger für jeden Ganoven im Raum.
+    </challenge>
+
+    <challenge title="Spitzel" credits="0" action="timer" timer="3">
+        Vorsicht! Ein Spitzel ist unter euch! Die nächsten 3 Minuten darf keiner etwas sagen.
+    </challenge>
+
+    <challenge title="Russisch Roulette" credits="1">
+        Spiel Schnick-Schnack-Schnuck mit einem beliebigem Spieler. Der Verlierer wird mit einem Killer bestraft.
+    </challenge>
+
+    <challenge title="Last but not Least" credits="0">
+        Alle exen einen Killer! Der letzte bekommt noch einen!
+    </challenge>
+
+    <challenge title="Achtung, der Chef!" credits="0" action="round" rounds="5">
+        Es darf 5 Runden lang nicht gelacht werden!
+    </challenge>
+
+    <challenge title="Inventur" credits="0">
+        Legt all euer Geld, was ihr dabei habt, auf den Tisch. Wer am wenigsten hat, bekommt den Killer gratis.
+    </challenge>
+
+    <challenge title="Angeschossen" credits="0" action="round" rounds="5">
+        Und das an deiner Lieblingshand! Benutze für alles andere darfst du jetzt nur noch die schwache Hand benutzen. Hält 5 Runden.
+    </challenge>
+
+    <challenge title="Casino-Time" credits="0" action="dice">
+        Würfel! Bei 1 - 5 Würfelaugen bekommst du entsprechend der Anzahl der Würfelaugen Finger Bier. Bei einer 6 gibt es FULLHOUSE: Alle anderen bekommen einen Killer.
+    </challenge>
+
+    <challenge title="Desateure werden erschossen" credits="0" action="timer" timer="10">
+        Klogänge sind für alle die nächsten 10 Minuten untersagt.
+    </challenge>
+
+    <challenge title="Amoklauf" credits="0">
+        Flaschendrehen! Derjenige, auf den die Flasche zeigt, wird erschossen und muss einen Killer trinken. Das wird solange wiederholt, bis die Flasche auf dich zeigt.
+    </challenge>
+
+    <challenge title="Eine Frage der Ehre" credits="2">
+        Trinke so viel, wie du möchtest. Die anderen müssen mit dir gleich ziehen.
+    </challenge>
+
+    <!--Hier sollte man vielleicht einen echten Würfel nehmen?-->
+    <!--<challenge title="Glückssache" credits="0" action="dice">-->
+    <!--Alle Würfeln! Der mit der niedrigsten Augenzahl bekommt einen Killer.-->
+    <!--</challenge>-->
+
+    <challenge title="Mobbing" credits="0" action="round" rounds="3">
+        Du bist der Buhmann für die nächsten 3 Runden. Du stehst und hälst die Fresse. Damit du das auch schaffst gibts nen Killer.
+    </challenge>
+
+    <challenge title="Molotov" credits="0">
+        Du brennst! Jeder, den du innerhalb der nächsten 3 Sekunden berührst brennt auch! Löscht euch mit einem Killer.
+    </challenge>
+
+    <challenge title="Chancengleichhheit" credits="0">
+        Der Spieler mit den am wenigsten getrunkenen Einheiten darf nun auch mal mit einem Killer seine Lippen benetzen.
+    </challenge>
+
+    <challenge title="Rotlichmilieu" credits="1">
+        Trinke für jede Frau am Tisch einen Killer.
+    </challenge>
+
+    <challenge title="Double Time" credits="0">
+        Jedes Getränk, was man vor sich stehen hat, wird verdoppelt!
+    </challenge>
+
+    <challenge title="Bling Bling" credits="0">
+        Derjenige mit dem wenigstens Schmuck am Körper ist out... und bekommt einen Killer. (Es zählen Ringe, Ohrringe, Ketten, Piercings, ...)
+    </challenge>
+
+    <challenge title="Bombe" credits="0" action="rounds" rounds="5">
+        5 Runden lang darf keiner trinken. Sind diese vorbei, müssen alle Getränke, die vor einem stehen, geext werden.
+    </challenge>
+
+    <challenge title="Lungen-Transplatation" credits="0" action="timer" timer="20">
+        Ihr müsst 20 Minuten ohne Rauchen auskommen.
+    </challenge>
+
+    <challenge title="Nachschubprobleme" credits="1" action="round" rounds="3">
+        Du kannst für ein Getränk ein beliebiges anderes zur verfügung stehendes Getränk ersetzen.
+    </challenge>
+
+    <challenge title="Killing Spree" credits="3"  action="round" rounds="3">
+        Jedes Mal, wenn ihr ein Bier trinken müsst, wird zusätzlich ein Killer getrunken.
+    </challenge>
+
+    <challenge title="Banküberfall" credits="0">
+        Schreit alle "Hände hoch" ... *Joke* Wers wirklich gemacht hat, bekommt einen Killer.
+    </challenge>
+
+    <challenge title="Ey, heb die Beine an" credits="0">
+        Keiner darf den Boden berühren, also Füße hoch! Gilt solange, bis der erste wieder den Boden berührt und mit einem Killer bestraft wird.
+    </challenge>
+
+    <challenge title="Pakt mit dem Teufel" credits="0" action="round" rounds="3">
+        Wenn du willst, kannst du auf der Stelle einen Killer trinken, und musst dafür für die nächsten 3 Runden nichts trinken.
+    </challenge>
+
+    <challenge title="Verrückter Zapfhahn" credits="0" action="dice">
+        Würfel, wie viele Killer der Zapfhahn ausschenkt. Verteile sie dann im Uhrzeigersinn an die Mitspieler, dein Linker Nachbar bekommt den ersten.
+    </challenge>
+
+    <challenge title="Elitepartner.de" credits="0">
+        Halte mit deinem linken und rechten Nachbarn Händchen. Trennungsgrund ist wie immer ein Killer für jeden von euch beiden.
+    </challenge>
+
+    <challenge title="Stotteranfall" credits="0" action="round" rounds="3">
+        Die nächsten 3 Runden musst du alles, was du sagen willst doppelt sagen! (Bsp. ich trinke = ich ich trinke trinke)
+    </challenge>
+
+    <challenge title="Splash-Damage" credits="0" action="round" rounds="3">
+        Immer, wenn jemand in den nächsten 3 Runden was trinken muss, trinken der linke und rechte Nachbar jeweils die Hälfte mit!
+    </challenge>
+
+    <challenge title="Regel-Pflege" credits="0" action="round, dice" rounds="{x}">
+        Denke dir eine Regel aus und würfel wie viele Runden diese gilt.
+    </challenge>
+
+    <challenge title="Montags-Maler" credits="2">
+        Male ein Bild, welches dich an diesen Abend erinnert.
+    </challenge>
+
+    <challenge title="Pole" credits="1">
+        Klaue jemanden sein Getränk, was er vor sich stehen hat. Hat keiner ein Getränk vor sich stehen hat, bekommt stattdessen jeder einen Killer.
+    </challenge>
+
+    <challenge title="Platzhirsch" credits="0">
+        Tausche mit einem Spieler deiner Wahl die Plätze. Also auch die Getränke, die vor euch stehen.
+    </challenge>
+
+    <challenge title="Unbändiger Durst" credits="3">
+        Exe alle deine Getränke, die vor dir stehen.
+    </challenge>
+
+    <challenge title="Ex und hop" credits="2" action="round" rounds="3">
+        Jeder muss die Getränke, die er ab jezt bekommt DIREKT exen.
+    </challenge>
+
+    <challenge title="Medusa" credits="0" action="round" rounds="1">
+        Keiner darf dir direkt in die Augen sehen, ansonsten wird er versteinert und muss sich am Ende der Runde mit einem Killer erlösen.
+    </challenge>
+
+    <challenge title="Schau mir in die Augen, Kleines" credits="1">
+        Du schaut einem Mitspieler deiner Wahl tief in die Augen. Wer als erster zwinktert oder lacht, wird mit einem Killer bestraft.
+    </challenge>
+
+    <challenge title="Migräne" credits="1" action="round" rounds="3">
+        Eine Hand von dir muss 3 Runden lang deinen Kopf berühren.
+    </challenge>
+
+    <challenge title="Börsen-Crash" credits="0">
+        Jeder, der 2 oder mehr Getränke vor sich stehen hat, muss so lange Getränke exen, bis er nur noch eins vor sich stehen hat.
+    </challenge>
+
+    <challenge title="Granate" credits="1" action="round" rounds="3">
+        Du hast eine alte Granate gefunden. Blöd nur, dass sie in 3 Runden explodiert und dem Halter einen Killer spendiert. Die Granate kann einmal pro Runde
+        für 2 Finger Bier an einen beliebigen Nachbarn weitergegeben werden.
+    </challenge>
+
+    <challenge title="Revolverheld" credits="1">
+        Deine 5 Kugeln in der Trommel haben bisher noch nie ein Ziel verfehlt. Du darfst 5 Finger Bier frei verteilen.
+    </challenge>
+
+    <challenge title="Like a Sir" credits="0">
+        Klemmt euch alle einen Kronkorken vor ein Auge für eine Runde. Wer es verliert, gehört zum gewöhnlichem Pöbel und wird mit einem Killer bestraft.
+    </challenge>
+
+    <challenge title="Schweine Hund" credits="2">
+        Wenn du willst, kansnt du einen Killer trinken. Hast du dies getan, kannst du würfeln. Jeder andere Spieler muss die Augenzahl an Fingern Bier trinken.
+    </challenge>
+
+    <challenge title="Grobmotoriker" credits="1" action="round" rounds="3">
+        Spiele 3 Runden mit beiden Armen über Kreuz.
+    </challenge>
+
+    <challenge title="Super-GAU" credits="3">
+        ALLE Mitspieler exen ALLE Getränke, die sie vor sich stehen haben. Danach werden diese wieder aufgefüllt.
+    </challenge>
+
+    <challenge title="Taktlos" credits="1">
+        Beleidige einen Mitspieler. Versöhnt euch danach wieder mit je 2 Fingern Bier.
+    </challenge>
+
+    <challenge title="Rapper" credits="1">
+        Sag ein Wort. Dein linker Nachbar muss ein Wort sagen, was sich annähernd darauf reimt - danach sein linker Nachbar und so weiter. Wer als erstes kein
+        Wort findet, muss einen Killer trinken.
+    </challenge>
+
+    <challenge title="Alter Falter" credits="2" action="dice">
+        Teile dein Alter durch (3+{x}). Das Ergebnis trinkst du an Fingern Bier.
+    </challenge>
+
+    <challenge title="Patent" credits="1" action="round" rounds="3">
+        Du darfst dir für die nächsten 3 Runden ein Wort patentieren lassen. Nur du darfst es benutzten. Jeder andere, der es ausspricht, trinkt einen Killer.
+    </challenge>
+
+    <challenge title="Hitzewelle" credits="0">
+        Jeder Spieler zieht ein Kleidungsstück aus. Alle dürfen sich mit einem Killer abkühlen.
+    </challenge>
+
+    <challenge title="Catwalk" credits="2">
+        Inszeniere den perfekten Catwalk a la Supermodel. Machst du es nicht gut, darfst du einen Killer trinken. Und denk dran: Die Tasche muss lebendig sein.
+    </challenge>
+
+    <challenge title="Karaoke" credits="0">
+        Stimm ein Lied an. Wer nicht mitsingt, kriegt nen Killer.
+    </challenge>
+
+</challenges>
