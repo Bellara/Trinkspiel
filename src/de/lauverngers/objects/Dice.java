@@ -7,9 +7,13 @@ import java.util.Random;
  */
 public class Dice {
 
-    public int throwDice(){
-        Random random = new Random();
-        return random.nextInt(6);
+    public int throwDices(int iNumberOfDices){
+        int eyes=0;
+        for(int i = 1;i <= iNumberOfDices;i++){
+            Random random = new Random();
+            eyes=eyes+random.nextInt(6);
+        }
+        return eyes;
     }
 
 }
