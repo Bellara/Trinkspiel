@@ -30,7 +30,7 @@ public class Game {
 
     public boolean gameFinished(){
         for (Player player : players) {
-            if (player.credits >= maxPoints) {
+            if (player.getCredits() >= maxPoints) {
                 return true;
             }
         }
