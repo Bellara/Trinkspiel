@@ -40,8 +40,9 @@ public class ChallengeService {
 
     private void handleLastFiveChallengesList(Challenge randomChallenge) {
         if (challengeList.size() > 5) {
-            //wenn idsList + neues > 5
-            idsOfLastFiveChallenges.remove(0);
+            if (idsOfLastFiveChallenges.size() + 1 > 5) {
+                idsOfLastFiveChallenges.remove(0);
+            }
             idsOfLastFiveChallenges.add(randomChallenge.getId());
         }
     }
