@@ -1,0 +1,20 @@
+Das Spielprinzip
+
+1.) Das Game sollte gestartet werden
+
+2.) Man sollte beliebig viele Spieler mit Namen anlegen können. Außerdem muss man die Anzahl der Getränke und die Art der
+Getränke festlegen könnne. (Kurze, etc.)
+
+3.) Nach dem Starten sollte man festlegen, wie hoch die maximal erreichbaren Punte sein sollen. Derjenige, der als erstes
+diese Punktzahl erreicht, hat gewonnen und das Spiel ist vorbei.
+
+4.) Eine Runde besteht eventuell aus einer Aufgabe und einer Aufforderung zu trinken.
+Die Aufforderung besteht aus eine zufälligen Menge und aus einem zufälligen Getränk. Die Person, die das Getränk trinken muss,
+wird zufällig ausgegeben.
+
+5.) Es sollen immer die Namen der Spieler angezeigt werden, inklusive ihrer bisher gewonnen Punkte. Vielleicht sogar in einer
+Art ranking.
+
+6.) Dauern Aufgaben über mehrere Runden, so soll auch ein Icon dementsprechend daraufhin deuten. Entweder gibt es für solche Aufgaben
+ein extra Icon oder, man muss über einen Mouseover herausfinden können, um welche Aufgabe es sich gehandelt hatte.
+

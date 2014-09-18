@@ -171,7 +171,7 @@
     </challenge>
 
     <challenge title="Ex und hop" credits="2" action="round" rounds="3">
-        Jeder muss die Getränke, die er ab jezt bekommt DIREKT exen.
+        Jeder muss die Getränke, die er ab jetzt bekommt DIREKT exen.
     </challenge>
 
     <challenge title="Medusa" credits="0" action="round" rounds="1">
@@ -179,7 +179,7 @@
     </challenge>
 
     <challenge title="Schau mir in die Augen, Kleines" credits="1">
-        Du schaut einem Mitspieler deiner Wahl tief in die Augen. Wer als erster zwinktert oder lacht, wird mit einem Killer bestraft.
+        Du schaut einem Mitspieler deiner Wahl tief in die Augen. Wer als erster zwinkert oder lacht, wird mit einem Killer bestraft.
     </challenge>
 
     <challenge title="Migräne" credits="1" action="round" rounds="3">
@@ -204,7 +204,7 @@
     </challenge>
 
     <challenge title="Schweine Hund" credits="2">
-        Wenn du willst, kansnt du einen Killer trinken. Hast du dies getan, kannst du würfeln. Jeder andere Spieler muss die Augenzahl an Fingern Bier trinken.
+        Wenn du willst, kannst du einen Killer trinken. Hast du dies getan, kannst du würfeln. Jeder andere Spieler muss die Augenzahl an Fingern Bier trinken.
     </challenge>
 
     <challenge title="Grobmotoriker" credits="1" action="round" rounds="3">
@@ -245,7 +245,11 @@
     </challenge>
 
     <challenge title="Picasso" credits="0">
-        Male ein Bild von einem deiner Mitspieler. Wer als erstes erkennt, wer es ist darf pausieren. Die anderen trinken einen Killer.
+        Male ein Bild von einem deiner Mitspieler. Wer als erstes erkennt, wer es ist, darf pausieren. Die anderen trinken einen Killer.
+    </challenge>
+
+    <challenge title="Hoooo-Girls" credits="0" action="round" rounds="3">
+        Ihr alle mutiert für 3 Runden zu Hoooo-Girls! Und feiert jedes Getränk
     </challenge>
 
 </challenges>
