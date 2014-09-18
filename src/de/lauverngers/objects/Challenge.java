@@ -1,17 +1,14 @@
 package de.lauverngers.objects;
 
-/**
- * Created by Maren on 17.09.14.
- */
 public class Challenge {
 
-    public long id;
-    public String title;
-    public String text;
-    public int points;
-    public int lifetime;
+    private long id;
+    private String title;
+    private String text;
+    private Integer points;
+    private Integer lifetime;
 
-    public Challenge(long id, String title, String text, int points, int lifetime) {
+    public Challenge(long id, String title, String text, Integer points, Integer lifetime) {
         this.id = id;
         this.title = title;
         this.text = text;
@@ -32,4 +29,41 @@ public class Challenge {
     public void setCredits(int credits){
         this.points = credits;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public Integer getLifetime() {
+        return lifetime;
+    }
+
+    public void setLifetime(int lifetime) {
+        this.lifetime = lifetime;
+    }
+
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 
 <challenges>
-    <challenge title="Kraftprobe" credits="{x}" action="dice">
+    <challenge title="Kraftprobe"  action="dice">
         Mache {x} Liegestütze! Für jede so erbrachte Leistung bekommt du einen Finger Bier.
     </challenge>
 
-    <challenge title="Razzia" credits="{x}" action="dice">
+    <challenge title="Razzia"  action="dice">
         Renne {x} Runden ums Haus/Sofa/... in jeder Runde bekommst du 2 Finger Bier zugesteckt.
     </challenge>
 
