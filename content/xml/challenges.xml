@@ -252,4 +252,16 @@
         Ihr alle mutiert für 3 Runden zu Hoooo-Girls! Und feiert jedes Getränk
     </challenge>
 
+    <challenge title="Daumenketschen" credits="2">
+        {p} und {p}: Spielt gegeneinander Daumenketschen. Der Gewinner erhält 2 Punkte
+    </challenge>
+
+    <challenge title="Beautyqueen" credits="1">
+        Lass dir einen Fingernagel lackieren. Weil das so hübsch aussieht, bekommst du einen Punkt.
+    </challenge>
+
+    <challenge title="Selfie-time" credits="1">
+        Schieß ein Selfie mit deinen beiden Sitznachbarn und stell es in die Gruppe. Dafür bekommst du einen Punkt.
+    </challenge>
+
 </challenges>
