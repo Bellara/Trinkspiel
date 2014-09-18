@@ -15,19 +15,11 @@ import java.util.List;
 
 public class ChallengeReader {
 
-    private String path;
-
-    public ChallengeReader() {
-        path = Constants.CHALLENGE_FILE_PATH;
+    public static List<Challenge> readChallengesFromFile() throws IOException {
+        return readChallengesFromFile(Constants.CHALLENGE_FILE_PATH);
     }
 
-    public ChallengeReader(String pathToXML) {
-        if (path != null) {
-            this.path = pathToXML;
-        }
-    }
-
-    public List<Challenge> readChallengesFromFile() throws IOException {
+    public static List<Challenge> readChallengesFromFile(String path) throws IOException {
         final List<Challenge> challengeList = new ArrayList();
         final File xmlFile = new File(path);
 
@@ -58,7 +50,9 @@ public class ChallengeReader {
                         lifeTime = Integer.valueOf(lifeTimeString);
                     }
 
-                    challengeList.add(new Challenge(i, title, text, points, lifeTime));
+                    final String action = element.getAttributeValue("action");
+
+                    challengeList.add(new Challenge(i, title, text, points, lifeTime, action));
 
                 }
             }

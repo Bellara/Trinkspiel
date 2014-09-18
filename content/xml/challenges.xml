@@ -5,7 +5,7 @@
         Mache {x} Liegestütze! Für jede so erbrachte Leistung bekommt du einen Finger Bier.
     </challenge>
 
-    <challenge title="Razzia"  action="dice">
+    <challenge title="Razzia" action="dice">
         Renne {x} Runden ums Haus/Sofa/... in jeder Runde bekommst du 2 Finger Bier zugesteckt.
     </challenge>
 

@@ -7,15 +7,16 @@ public class Challenge {
     private String text;
     private Integer points;
     private Integer lifetime;
+    private String action;
 
-    public Challenge(long id, String title, String text, Integer points, Integer lifetime) {
+    public Challenge(long id, String title, String text, Integer points, Integer lifetime, String action) {
         this.id = id;
         this.title = title;
         this.text = text;
         this.points = points;
         this.lifetime = lifetime;
+        this.action = action;
     }
-
     public void reduceActiveTime(){
         if(lifetime > 0){
             lifetime--;
@@ -66,4 +67,11 @@ public class Challenge {
         this.lifetime = lifetime;
     }
 
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
 }

@@ -6,5 +6,7 @@ package de.lauverngers;
 public class Constants {
 
     final public static String CHALLENGE_FILE_PATH = "content/xml/challenges.xml";
+    final public static String DICE_ACTION = "dice";
+
 
 }
