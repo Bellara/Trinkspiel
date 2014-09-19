@@ -1,6 +1,5 @@
 package de.lauverngers.objects;
 
-import de.lauverngers.challenge.ChallengeReader;
 import de.lauverngers.challenge.ChallengeService;
 
 import java.util.ArrayList;
@@ -22,13 +21,17 @@ public class Game {
     public int round;
 
     public Game(ChallengeService challengeService) {
-        round = 0;
         this.challengeService = challengeService;
     }
 
     public Game(double possibilityOfChallenge, ChallengeService challengeService) {
         this.challengeService = challengeService;
         this.possibilityOfChallenge = possibilityOfChallenge;
+    }
+
+    public void init(){
+        round = 0;
+        this.possibilityOfChallenge = 0.5;
     }
 
     public void addPlayer(Player player){

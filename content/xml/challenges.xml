@@ -252,12 +252,17 @@
         Ihr alle mutiert für 3 Runden zu Hoooo-Girls! Und feiert jedes Getränk
     </challenge>
 
-    <challenge title="Daumenketschen" credits="2">
-        {p} und {p}: Spielt gegeneinander Daumenketschen. Der Gewinner erhält 2 Punkte
+    <challenge title="Daumencatchen" credits="2">
+        {p} und {p}: Spielt gegeneinander Daumencatchen. Der Gewinner erhält 2 Punkte
     </challenge>
 
     <challenge title="Selfie-time" credits="1">
         Schieß ein Selfie mit deinen beiden Sitznachbarn. Dafür bekommst du einen Punkt.
+    </challenge>
+
+    <challenge title="Staffellauf" credits="0">
+        Teilt euch in zwei gleich große Gruppen. Jeder füllt sich einen Killer auf. Aus jeder Gruppe trinkt einer diesen Killer. Der Zweite darf erst
+        beginnen, wenn der vorherige Partner abgesetzt und das Glas auf dem Tisch gestellt hat.
     </challenge>
 
 </challenges>
