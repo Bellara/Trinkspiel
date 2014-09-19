@@ -17,11 +17,16 @@ public class GameStartPanel extends GamePanel {
     public GameStartPanel() {
         super.init();
         addComponentToPanel(initGameStartButton());
+        this.repaint();
         super.showPanel();
     }
 
     private JButton initGameStartButton(){
         gameStartButton = new JButton("Los gehts");
+        gameStartButton.setSize(new Dimension(100, 30));
+        gameStartButton.setFont(CUSTOM_FONT);
+        gameStartButton.setForeground(Color.GREEN);
+        gameStartButton.setBackground(Color.GRAY);
         gameMouseListener = new GameStartMouseListener();
         gameStartButton.addMouseListener(gameMouseListener);
         return gameStartButton;
@@ -42,7 +47,6 @@ public class GameStartPanel extends GamePanel {
             catch (IOException ioe) {
                 //toDo: exception handling
             }
-//            initSettingsPanel
         }
 
         @Override

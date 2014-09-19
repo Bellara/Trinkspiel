@@ -12,6 +12,8 @@ public class GamePanel extends JPanel {
 
     private JFrame creationFrame;
 
+    public final Font CUSTOM_FONT = new Font("Comic Sans MS", Font.BOLD, 18);
+
     protected void init() {
         creationFrame = new JFrame("Zerschepperung");
         creationFrame.setResizable(false);
@@ -19,7 +21,14 @@ public class GamePanel extends JPanel {
         creationFrame.setSize(getMaximumScreenSize());
         creationFrame.setBackground(Color.BLACK);
         creationFrame.setLocationRelativeTo(null);
-        creationFrame.add(this);
+        creationFrame.add(initLabel());
+    }
+
+    private JLabel initLabel(){
+        JLabel label = new JLabel("Zerschepperung");
+        label.setBackground(Color.BLACK);
+        label.setFont(CUSTOM_FONT);
+        return label;
     }
 
     protected void addComponentToPanel(Component component){
