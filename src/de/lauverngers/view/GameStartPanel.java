@@ -7,10 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 
-/**
- * Created by Maren on 19.09.14.
- */
 public class GameStartPanel extends GamePanel {
 
     private JButton gameStartButton;
@@ -38,7 +36,12 @@ public class GameStartPanel extends GamePanel {
         @Override
         public void mouseClicked(MouseEvent e) {
             Game game = new Game(new ChallengeService());
-            game.init();
+            try {
+                game.init();
+            }
+            catch (IOException ioe) {
+                //toDo: exception handling
+            }
 //            initSettingsPanel
         }
 
