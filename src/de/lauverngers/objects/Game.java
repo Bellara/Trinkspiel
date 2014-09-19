@@ -13,25 +13,24 @@ public class Game {
     public List<Player> players = new ArrayList();
     public List<Drink> drinks = new ArrayList();
     private ChallengeService challengeService;
-    private double possibilityOfChallenge;
 
     public int maxPoints;
     //Die Wahrscheinlichkeit von Aufgaben
-    public int challengeQuotient;
+    public double challengeQuotient;
     public int round;
 
     public Game(ChallengeService challengeService) {
         this.challengeService = challengeService;
     }
 
-    public Game(double possibilityOfChallenge, ChallengeService challengeService) {
+    public Game(double challengeQuotient, ChallengeService challengeService) {
         this.challengeService = challengeService;
-        this.possibilityOfChallenge = possibilityOfChallenge;
+        this.challengeQuotient = challengeQuotient;
     }
 
     public void init(){
         round = 0;
-        this.possibilityOfChallenge = 0.5;
+        this.challengeQuotient = 0.5;
     }
 
     public void addPlayer(Player player){

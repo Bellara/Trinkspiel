@@ -1,7 +1,7 @@
 package de.lauverngers;
 
 import de.lauverngers.challenge.ChallengeService;
-import de.lauverngers.view.GameCreationPanel;
+import de.lauverngers.view.GameStartPanel;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ public class StartGame {
 
     public static void main(String[] args) {
 //        initGame
-        GameCreationPanel gameCreationPanel = new GameCreationPanel();
+        final GameStartPanel gameStartPanel= new GameStartPanel();
 //        startGame
 //        endGame
     }
