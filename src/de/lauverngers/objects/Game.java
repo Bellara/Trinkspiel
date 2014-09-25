@@ -9,6 +9,7 @@ import java.util.List;
 public class Game {
 
     public List<Player> players = new ArrayList();
+    private Player currentPlayer;
     public List<Drink> drinks = new ArrayList();
     private ChallengeService challengeService;
 
@@ -32,6 +33,9 @@ public class Game {
         final ChallengeService challengeService = new ChallengeService();
         challengeService.loadChallenges();
         this.challengeService = challengeService;
+        if (players.size() > 0) {
+            currentPlayer = players.get(0);
+        }
 
     }
 
@@ -52,7 +56,20 @@ public class Game {
         return false;
     }
 
-    public void nextRound() {
+    public Challenge nextRound() {
         round++;
+
+        Challenge challenge = null;
+
+        if (players.size() > 0) {
+
+            currentPlayer = players.get(round % players.size());
+
+            if (Math.random() < challengeQuotient) {
+                challenge = challengeService.getRandomChallenge(players, currentPlayer);
+            }
+        }
+
+        return challenge;
     }
 }

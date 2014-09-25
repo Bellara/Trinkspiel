@@ -13,6 +13,7 @@ public class GameStartPanel extends GamePanel {
 
     private JButton gameStartButton;
     private MouseListener gameMouseListener;
+    private Game game;
 
     public GameStartPanel() {
         super.init();
@@ -21,7 +22,7 @@ public class GameStartPanel extends GamePanel {
         super.showPanel();
     }
 
-    private JButton initGameStartButton(){
+    private JButton initGameStartButton() {
         gameStartButton = new JButton("Los gehts");
         gameStartButton.setSize(new Dimension(100, 30));
         gameStartButton.setFont(CUSTOM_FONT);
@@ -32,7 +33,7 @@ public class GameStartPanel extends GamePanel {
         return gameStartButton;
     }
 
-    private Dimension getMaximumScreenSize(){
+    private Dimension getMaximumScreenSize() {
         return Toolkit.getDefaultToolkit().getScreenSize();
     }
 
@@ -40,7 +41,7 @@ public class GameStartPanel extends GamePanel {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            Game game = new Game(new ChallengeService());
+            game = new Game(new ChallengeService());
             try {
                 game.init();
             }
@@ -68,5 +69,9 @@ public class GameStartPanel extends GamePanel {
         public void mouseExited(MouseEvent e) {
 
         }
+    }
+
+    public Game getGame() {
+        return game;
     }
 }
