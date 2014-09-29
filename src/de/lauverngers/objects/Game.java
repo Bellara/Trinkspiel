@@ -4,6 +4,7 @@ import de.lauverngers.challenge.ChallengeService;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Game {
@@ -14,7 +15,6 @@ public class Game {
     private ChallengeService challengeService;
 
     public int maxPoints;
-    //Die Wahrscheinlichkeit von Aufgaben
     public double challengeQuotient;
     public int round;
 
@@ -72,4 +72,39 @@ public class Game {
 
         return challenge;
     }
+
+    public String removePlayer(Long id) {
+
+        if (id != null && id <= players.size()) {
+            return removePlayer(players.get(id.intValue()));
+        }
+
+        return null;
+    }
+
+    public String removePlayer(String name) {
+
+        if(name != null) {
+
+            Player playerToRemove = null;
+
+            for (Player player : players) {
+                if (name.equals(player.getName())) {
+                    playerToRemove = player;
+                    break;
+                }
+            }
+
+            return removePlayer(playerToRemove);
+
+        }
+        return null;
+
+    }
+
+    public String removePlayer(Player player) {
+        players.remove(player);
+        return "Hier könnte ihre Werbung stehen.";
+    }
+
 }
