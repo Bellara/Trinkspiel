@@ -40,14 +40,19 @@ public class ChallengeReader {
                     //when points are NULL roll a die
                     final String pointString = element.getAttributeValue("credits");
                     Integer points = null;
-                    if(StringUtils.isNotEmpty(pointString)) {
+                    if (StringUtils.isNotEmpty(pointString)) {
                         points = Integer.valueOf(pointString);
                     }
 
-                    final String lifeTimeString = element.getAttributeValue("round");
+                    final String lifeTimeString = element.getAttributeValue("rounds");
                     Integer lifeTime = null;
-                    if(StringUtils.isNotEmpty(lifeTimeString)) {
-                        lifeTime = Integer.valueOf(lifeTimeString);
+                    if (StringUtils.isNotEmpty(lifeTimeString)) {
+                        if (Constants.PLACE_HOLDER_STRING.equals(lifeTimeString)) {
+                            lifeTime = new Integer(0);
+                        }
+                        else{
+                            lifeTime = Integer.valueOf(lifeTimeString);
+                        }
                     }
 
                     final String action = element.getAttributeValue("action");
@@ -55,8 +60,7 @@ public class ChallengeReader {
                     challengeList.add(new Challenge(i, title, text, points, lifeTime, action));
 
                 }
-            }
-            catch (JDOMException e) {
+            } catch (JDOMException e) {
                 throw new RuntimeException(e);
             }
         }

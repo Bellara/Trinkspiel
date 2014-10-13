@@ -35,9 +35,17 @@ public class ChallengeService {
 
         handleLastFiveChallengesList(randomChallenge);
 
+        fillChallengeWithLifeTime(randomChallenge);
+
         fillRandomChallengeWithPointsIfNeeded(randomChallenge, playerList, player);
 
         return randomChallenge;
+    }
+
+    private void fillChallengeWithLifeTime(Challenge randomChallenge) {
+        if(new Integer(0).equals(randomChallenge.getRoundCount())) {
+            randomChallenge.setRoundCount(Die.throwSingleDie());
+        }
     }
 
     private void handleLastFiveChallengesList(Challenge randomChallenge) {
@@ -81,7 +89,7 @@ public class ChallengeService {
     private void fillChallengeTextWithPoints(Challenge randomChallenge) {
         final int diceRoll = Die.throwSingleDie();
         randomChallenge.setPoints(diceRoll);
-        randomChallenge.setText(randomChallenge.getText().replaceAll("\\{x\\}", String.valueOf(diceRoll)));
+        randomChallenge.setText(randomChallenge.getText().replaceAll(Constants.PLACE_HOLDER_STRING, String.valueOf(diceRoll)));
     }
 
     private void fillChallengeTextWithPlayers(Challenge randomChallenge, List<Player> playerList, Player player) {
@@ -116,5 +124,14 @@ public class ChallengeService {
 
     private int countPlayersInText(String text) {
         return StringUtils.countMatches(text, "\\[p\\]");
+    }
+
+    public Challenge getChallengeById(Long challengeId) {
+        for(Challenge challenge : challengeList) {
+            if(challengeId.equals(challenge.getId())) {
+                return challenge;
+            }
+        }
+        return null;
     }
 }

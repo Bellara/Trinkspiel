@@ -6,25 +6,25 @@ public class Challenge {
     private String title;
     private String text;
     private Integer points;
-    private Integer lifetime;
+    private Integer roundCount;
     private String action;
 
-    public Challenge(long id, String title, String text, Integer points, Integer lifetime, String action) {
+    public Challenge(long id, String title, String text, Integer points, Integer roundCount, String action) {
         this.id = id;
         this.title = title;
         this.text = text;
         this.points = points;
-        this.lifetime = lifetime;
+        this.roundCount = roundCount;
         this.action = action;
     }
-    public void reduceActiveTime(){
-        if(lifetime > 0){
-            lifetime--;
+    public void reduceRoundCounter(){
+        if(roundCount > 0){
+            roundCount--;
         }
     }
 
     public boolean isActive(){
-        return lifetime > 0;
+        return roundCount > 0;
     }
 
     public void setCredits(int credits){
@@ -59,12 +59,12 @@ public class Challenge {
         this.points = points;
     }
 
-    public Integer getLifetime() {
-        return lifetime;
+    public Integer getRoundCount() {
+        return roundCount;
     }
 
-    public void setLifetime(int lifetime) {
-        this.lifetime = lifetime;
+    public void setRoundCount(int roundCount) {
+        this.roundCount = roundCount;
     }
 
     public String getAction() {

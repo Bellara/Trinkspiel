@@ -3,20 +3,19 @@ package de.lauverngers.objects;
 import de.lauverngers.challenge.ChallengeService;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class Game {
 
-    public List<Player> players = new ArrayList();
+    private List<Player> players = new ArrayList();
     private Player currentPlayer;
-    public List<Drink> drinks = new ArrayList();
+    private List<Drink> drinks = new ArrayList();
     private ChallengeService challengeService;
+    private Map<Long, Challenge> onGoingChallenges = new HashMap<>();
 
-    public int maxPoints;
-    public double challengeQuotient;
-    public int round;
+    private int maxPoints;
+    private double challengeQuotient;
+    private int round;
 
     public Game(ChallengeService challengeService) {
         this.challengeService = challengeService;
@@ -61,16 +60,36 @@ public class Game {
 
         Challenge challenge = null;
 
+        handleChallengeLifeTimeDecrease();
+
         if (players.size() > 0) {
 
             currentPlayer = players.get(round % players.size());
-
-            if (Math.random() < challengeQuotient) {
+            double d = Math.random();
+            if (d < challengeQuotient) {
                 challenge = challengeService.getRandomChallenge(players, currentPlayer);
+                if (challenge != null && challenge.getRoundCount() != null) {
+                    onGoingChallenges.put(challenge.getId(), challenge);
+                }
             }
         }
 
         return challenge;
+    }
+
+    private void handleChallengeLifeTimeDecrease() {
+        for (Iterator<Long> iterator = onGoingChallenges.keySet().iterator(); iterator.hasNext(); ) {
+            final Long challengeId = iterator.next();
+            final Challenge challenge = onGoingChallenges.get(challengeId);
+
+            challenge.reduceRoundCounter();
+
+
+
+            if (challenge.getRoundCount() <= 0) {
+                onGoingChallenges.remove(challengeId);
+            }
+        }
     }
 
     public String removePlayer(Long id) {
@@ -84,7 +103,7 @@ public class Game {
 
     public String removePlayer(String name) {
 
-        if(name != null) {
+        if (name != null) {
 
             Player playerToRemove = null;
 
@@ -99,7 +118,6 @@ public class Game {
 
         }
         return null;
-
     }
 
     public String removePlayer(Player player) {
@@ -107,4 +125,51 @@ public class Game {
         return "Hier könnte ihre Werbung stehen.";
     }
 
+    public List<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
+    public List<Drink> getDrinks() {
+        return drinks;
+    }
+
+    public void setDrinks(List<Drink> drinks) {
+        this.drinks = drinks;
+    }
+
+    public Map<Long, Challenge> getOnGoingChallenges() {
+        return onGoingChallenges;
+    }
+
+    public void setOnGoingChallenges(Map<Long, Challenge> onGoingChallenges) {
+        this.onGoingChallenges = onGoingChallenges;
+    }
+
+    public int getMaxPoints() {
+        return maxPoints;
+    }
+
+    public void setMaxPoints(int maxPoints) {
+        this.maxPoints = maxPoints;
+    }
+
+    public double getChallengeQuotient() {
+        return challengeQuotient;
+    }
+
+    public void setChallengeQuotient(double challengeQuotient) {
+        this.challengeQuotient = challengeQuotient;
+    }
 }
