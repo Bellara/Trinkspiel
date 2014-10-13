@@ -7,15 +7,18 @@ public class Challenge {
     private String text;
     private Integer points;
     private Integer roundCount;
+    private Integer timer;
     private String action;
 
-    public Challenge(long id, String title, String text, Integer points, Integer roundCount, String action) {
+
+    public Challenge(long id, String title, String text, Integer points, Integer roundCount, Integer timer, String action) {
         this.id = id;
         this.title = title;
         this.text = text;
         this.points = points;
         this.roundCount = roundCount;
         this.action = action;
+        this.timer = timer;
     }
     public void reduceRoundCounter(){
         if(roundCount > 0){
@@ -73,5 +76,13 @@ public class Challenge {
 
     public void setAction(String action) {
         this.action = action;
+    }
+
+    public Integer getTimer() {
+        return timer;
+    }
+
+    public void setTimer(Integer timer) {
+        this.timer = timer;
     }
 }

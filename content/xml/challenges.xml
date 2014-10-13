@@ -37,7 +37,7 @@
         Schreit alle "Hände hoch!" und reißt die Hände hoch. Der letzte bekommt einen Killer und 1 Finger für jeden Ganoven im Raum.
     </challenge>
 
-    <challenge title="Spitzel" credits="0" action="timer" timer="3">
+    <challenge title="Spitzel" credits="0" action="timer" timer="180">
         Vorsicht! Ein Spitzel ist unter euch! Die nächsten 3 Minuten darf keiner etwas sagen.
     </challenge>
 
@@ -65,7 +65,7 @@
         Würfel! Bei 1 - 5 Würfelaugen bekommst du entsprechend der Anzahl der Würfelaugen Finger Bier. Bei einer 6 gibt es FULLHOUSE: Alle anderen bekommen einen Killer.
     </challenge>
 
-    <challenge title="Desateure werden erschossen" credits="0" action="timer" timer="10">
+    <challenge title="Desateure werden erschossen" credits="0" action="timer" timer="600">
         Klogänge sind für alle die nächsten 10 Minuten untersagt.
     </challenge>
 
@@ -110,7 +110,7 @@
         5 Runden lang darf keiner trinken. Sind diese vorbei, müssen alle Getränke, die vor einem stehen, geext werden.
     </challenge>
 
-    <challenge title="Lungen-Transplatation" credits="0" action="timer" timer="20">
+    <challenge title="Lungen-Transplatation" credits="0" action="timer" timer="1200">
         Ihr müsst 20 Minuten ohne Rauchen auskommen.
     </challenge>
 
