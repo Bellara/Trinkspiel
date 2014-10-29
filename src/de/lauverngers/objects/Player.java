@@ -1,5 +1,10 @@
 package de.lauverngers.objects;
 
+import de.lauverngers.objects.items.Item;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Maren on 17.09.14.
  */
@@ -7,6 +12,7 @@ public class Player {
 
     private String name;
     private int credits;
+    private List<Item> items = new ArrayList<>();
 
     public Player(String name, int credits) {
         this.name = name;

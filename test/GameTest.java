@@ -1,4 +1,5 @@
 import de.lauverngers.challenge.ChallengeService;
+import de.lauverngers.objects.Challenge;
 import de.lauverngers.objects.Drink;
 import de.lauverngers.objects.Game;
 import de.lauverngers.objects.Player;
@@ -7,8 +8,8 @@ import java.io.IOException;
 
 public class GameTest {
 
-    public static void main(String[] args) {
-        final Game game = new Game(1, new ChallengeService());
+    public static void main(String[] args) throws IOException {
+        final Game game = new Game(1);
         try {
             game.init();
         }
@@ -20,7 +21,7 @@ public class GameTest {
         game.addPlayer(playerOne);
         game.addDrink(new Drink("Beton", "Liter"));
 
-        game.nextRound();
+        final Challenge challenge = game.nextRound();
 
         assert game.getCurrentPlayer().equals(playerOne);
 

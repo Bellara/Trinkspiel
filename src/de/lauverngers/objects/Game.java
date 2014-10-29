@@ -17,12 +17,12 @@ public class Game {
     private double challengeQuotient;
     private int round;
 
-    public Game(ChallengeService challengeService) {
-        this.challengeService = challengeService;
+    public Game() throws IOException {
+        init();
     }
 
-    public Game(double challengeQuotient, ChallengeService challengeService) {
-        this.challengeService = challengeService;
+    public Game(double challengeQuotient) throws IOException {
+        init();
         this.challengeQuotient = challengeQuotient;
     }
 
@@ -32,10 +32,6 @@ public class Game {
         final ChallengeService challengeService = new ChallengeService();
         challengeService.loadChallenges();
         this.challengeService = challengeService;
-        if (players.size() > 0) {
-            currentPlayer = players.get(0);
-        }
-
     }
 
     public void addPlayer(Player player) {
@@ -58,33 +54,34 @@ public class Game {
     public Challenge nextRound() {
         round++;
 
-        Challenge challenge = null;
-
         handleChallengeLifeTimeDecrease();
 
         if (players.size() > 0) {
 
-            currentPlayer = players.get(round % players.size());
-            double d = Math.random();
-            if (d < challengeQuotient) {
-                challenge = challengeService.getRandomChallenge(players, currentPlayer);
-                if (challenge != null && challenge.getRoundCount() != null) {
-                    onGoingChallenges.put(challenge.getId(), challenge);
-                }
+            //choose player by random (very random, much dice, wow)
+            currentPlayer = players.get(Die.throwDice(players.size(),1));
+
+            return getRandomChallenge();
+        }
+        return null;
+    }
+
+    private Challenge getRandomChallenge() {
+        Challenge challenge = null;
+        if (Math.random() < challengeQuotient) {
+            challenge = challengeService.getRandomChallenge(players, currentPlayer);
+            if (challenge != null && challenge.getRoundCount() != null) {
+                onGoingChallenges.put(challenge.getId(), challenge);
             }
         }
-
         return challenge;
     }
 
     private void handleChallengeLifeTimeDecrease() {
-        for (Iterator<Long> iterator = onGoingChallenges.keySet().iterator(); iterator.hasNext(); ) {
-            final Long challengeId = iterator.next();
+        for (final Long challengeId : onGoingChallenges.keySet()) {
             final Challenge challenge = onGoingChallenges.get(challengeId);
 
             challenge.reduceRoundCounter();
-
-
 
             if (challenge.getRoundCount() <= 0) {
                 onGoingChallenges.remove(challengeId);

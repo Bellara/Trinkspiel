@@ -23,7 +23,7 @@ public class GameStartPanel extends GamePanel {
     }
 
     private JButton initGameStartButton() {
-        gameStartButton = new JButton("Los gehts");
+        gameStartButton = new JButton("ZERSCHEPPERN !!");
         gameStartButton.setSize(new Dimension(100, 30));
         gameStartButton.setFont(CUSTOM_FONT);
         gameStartButton.setForeground(Color.GREEN);
@@ -41,11 +41,9 @@ public class GameStartPanel extends GamePanel {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            game = new Game(new ChallengeService());
             try {
-                game.init();
-            }
-            catch (IOException ioe) {
+                game = new Game();
+            } catch (IOException ioe) {
                 //toDo: exception handling
             }
         }

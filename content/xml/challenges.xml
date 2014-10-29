@@ -37,9 +37,9 @@
         Schreit alle "Hände hoch!" und reißt die Hände hoch. Der letzte bekommt einen Killer und 1 Finger für jeden Ganoven im Raum.
     </challenge>
 
-    <challenge title="Spitzel" credits="0" action="timer" timer="180">
-        Vorsicht! Ein Spitzel ist unter euch! Die nächsten 3 Minuten darf keiner etwas sagen.
-    </challenge>
+    <!--<challenge title="Spitzel" credits="0" action="timer" timer="180">-->
+        <!--Vorsicht! Ein Spitzel ist unter euch! Die nächsten 3 Minuten darf keiner etwas sagen.-->
+    <!--</challenge>-->
 
     <challenge title="Russisch Roulette" credits="1">
         Spiel Schnick-Schnack-Schnuck mit einem beliebigem Spieler. Der Verlierer wird mit einem Killer bestraft.
@@ -65,9 +65,9 @@
         Würfel! Bei 1 - 5 Würfelaugen bekommst du entsprechend der Anzahl der Würfelaugen Finger Bier. Bei einer 6 gibt es FULLHOUSE: Alle anderen bekommen einen Killer.
     </challenge>
 
-    <challenge title="Desateure werden erschossen" credits="0" action="timer" timer="600">
-        Klogänge sind für alle die nächsten 10 Minuten untersagt.
-    </challenge>
+    <!--<challenge title="Desateure werden erschossen" credits="0" action="timer" timer="600">-->
+        <!--Klogänge sind für alle die nächsten 10 Minuten untersagt.-->
+    <!--</challenge>-->
 
     <challenge title="Amoklauf" credits="0">
         Flaschendrehen! Derjenige, auf den die Flasche zeigt, wird erschossen und muss einen Killer trinken. Das wird solange wiederholt, bis die Flasche auf dich zeigt.
@@ -110,9 +110,9 @@
         5 Runden lang darf keiner trinken. Sind diese vorbei, müssen alle Getränke, die vor einem stehen, geext werden.
     </challenge>
 
-    <challenge title="Lungen-Transplatation" credits="0" action="timer" timer="1200">
-        Ihr müsst 20 Minuten ohne Rauchen auskommen.
-    </challenge>
+    <!--<challenge title="Lungen-Transplatation" credits="0" action="timer" timer="1200">-->
+        <!--Ihr müsst 20 Minuten ohne Rauchen auskommen.-->
+    <!--</challenge>-->
 
     <challenge title="Nachschubprobleme" credits="1" action="round" rounds="3">
         Du kannst für ein Getränk ein beliebiges anderes zur verfügung stehendes Getränk ersetzen.
