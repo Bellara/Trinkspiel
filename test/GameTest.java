@@ -6,28 +6,23 @@ import de.lauverngers.objects.Player;
 
 import java.io.IOException;
 
-public class GameTest {
+public class GameTest extends Test{
+
+    public GameTest() throws IOException {
+        super();
+    }
 
     public static void main(String[] args) throws IOException {
-        final Game game = new Game(1);
-        try {
-            game.init();
-        }
-        catch (IOException ioe) {
-            System.out.println("Whatever");
-        }
-
+        final GameTest gameTest = new GameTest();
         final Player playerOne = new Player("Dieter", 0);
-        game.addPlayer(playerOne);
-        game.addDrink(new Drink("Beton", "Liter"));
+        gameTest.getGame().addPlayer(playerOne);
+        gameTest.getGame().addDrink(new Drink("Beton", "Liter"));
 
-        final Challenge challenge = game.nextRound();
+        final Challenge challenge = gameTest.getGame().nextRound();
 
-        assert game.getCurrentPlayer().equals(playerOne);
+        assert gameTest.getGame().getCurrentPlayer().equals(playerOne);
 
-        game.getOnGoingChallenges();
-
-
+        gameTest.getGame().getOnGoingChallenges();
     }
 
 }

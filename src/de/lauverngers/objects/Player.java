@@ -42,4 +42,12 @@ public class Player {
     public void setCredits(int credits) {
         this.credits = credits;
     }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
 }

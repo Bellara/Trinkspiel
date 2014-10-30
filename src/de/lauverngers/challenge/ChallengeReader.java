@@ -22,7 +22,7 @@ public class ChallengeReader {
     }
 
     public static List<Challenge> readChallengesFromFile(String path) throws IOException {
-        final List<Challenge> challengeList = new ArrayList();
+        final List<Challenge> challengeList = new ArrayList<>();
         final File xmlFile = new File(path);
 
         if (xmlFile.exists() && xmlFile.isFile() && xmlFile.canRead() && xmlFile.length() > 0) {
@@ -53,7 +53,7 @@ public class ChallengeReader {
                     Integer lifeTime = null;
                     if (StringUtils.isNotEmpty(lifeTimeString)) {
                         if (Constants.PLACE_HOLDER_STRING.equals(lifeTimeString)) {
-                            lifeTime = new Integer(0);
+                            lifeTime = 0;
                         } else {
                             lifeTime = Integer.valueOf(lifeTimeString);
                         }

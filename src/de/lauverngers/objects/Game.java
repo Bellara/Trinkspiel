@@ -1,6 +1,10 @@
 package de.lauverngers.objects;
 
 import de.lauverngers.challenge.ChallengeService;
+import de.lauverngers.objects.items.GoldCard;
+import de.lauverngers.objects.items.Item;
+import de.lauverngers.objects.items.MultiPointSteal;
+import de.lauverngers.objects.items.PointSteal;
 
 import java.io.IOException;
 import java.util.*;
@@ -59,7 +63,7 @@ public class Game {
         if (players.size() > 0) {
 
             //choose player by random (very random, much dice, wow)
-            currentPlayer = players.get(Die.throwDice(players.size(),1));
+            currentPlayer = players.get(Die.throwDice(players.size(), 1));
 
             return getRandomChallenge();
         }
@@ -168,5 +172,66 @@ public class Game {
 
     public void setChallengeQuotient(double challengeQuotient) {
         this.challengeQuotient = challengeQuotient;
+    }
+
+    public Map<Player, List<Item>> getPlayerItemMapping() {
+        final Map<Player, List<Item>> playerItemMapping = new HashMap<>();
+        for (Player player : players) {
+            playerItemMapping.put(player, player.getItems());
+        }
+        return playerItemMapping;
+    }
+
+    public void useItem(Player player, Item item, List<Object> target) {
+        if (player == null || item == null) {
+            return;
+        }
+        if (!player.getItems().contains(item)) {
+            return;
+        }
+
+        final List<Player> targetPlayers = new ArrayList<>();
+        final List<Drink> targetDrinks = new ArrayList<>();
+
+        if(target != null && !target.isEmpty()) {
+            for (Object o : target) {
+                if (o instanceof Player) {
+                    targetPlayers.add((Player) o);
+                } else if (o instanceof Drink) {
+                    targetDrinks.add((Drink) o);
+                }
+            }
+        }
+
+        if (item instanceof PointSteal) {
+            final PointSteal stealItem = (PointSteal) item;
+
+            if (targetPlayers.isEmpty()) {
+                return;
+            }
+
+            player.increaseCredits(stealItem.getAmountOfPoints());
+            targetPlayers.get(0).decreaseCredit(stealItem.getAmountOfPoints());
+
+        }
+        else if (item instanceof MultiPointSteal) {
+            final MultiPointSteal stealItem = (MultiPointSteal) item;
+
+            if (targetPlayers.isEmpty()) {
+                return;
+            }
+
+            //multisteal ? sounds like fun ;)
+            for (Player targetedPlayer : targetPlayers) {
+                player.increaseCredits(stealItem.getAmountOfPoints());
+                targetedPlayer.decreaseCredit(stealItem.getAmountOfPoints());
+            }
+        }
+        else if(item instanceof GoldCard) {
+            final GoldCard goldCard = (GoldCard) item;
+            player.increaseCredits(goldCard.getPoints());
+        }
+
+        player.getItems().remove(item);
     }
 }
