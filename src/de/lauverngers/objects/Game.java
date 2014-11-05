@@ -1,10 +1,7 @@
 package de.lauverngers.objects;
 
 import de.lauverngers.challenge.ChallengeService;
-import de.lauverngers.objects.items.GoldCard;
-import de.lauverngers.objects.items.Item;
-import de.lauverngers.objects.items.MultiPointSteal;
-import de.lauverngers.objects.items.PointSteal;
+import de.lauverngers.objects.items.*;
 
 import java.io.IOException;
 import java.util.*;
@@ -182,18 +179,19 @@ public class Game {
         return playerItemMapping;
     }
 
-    public void useItem(Player player, Item item, List<Object> target) {
+    //item usage can return a String which can be shown on the client side
+    public String useItem(Player player, Item item, List<Object> target) {
         if (player == null || item == null) {
-            return;
+            return null;
         }
         if (!player.getItems().contains(item)) {
-            return;
+            return null;
         }
 
         final List<Player> targetPlayers = new ArrayList<>();
         final List<Drink> targetDrinks = new ArrayList<>();
 
-        if(target != null && !target.isEmpty()) {
+        if (target != null && !target.isEmpty()) {
             for (Object o : target) {
                 if (o instanceof Player) {
                     targetPlayers.add((Player) o);
@@ -203,35 +201,53 @@ public class Game {
             }
         }
 
+        String returnMessage = null;
+
         if (item instanceof PointSteal) {
-            final PointSteal stealItem = (PointSteal) item;
+            if (item instanceof MultiPointSteal) { //because MultiSteal is just a child of normal steal
+                final MultiPointSteal stealItem = (MultiPointSteal) item;
 
-            if (targetPlayers.isEmpty()) {
-                return;
-            }
+                if (targetPlayers.isEmpty()) {
+                    return null;
+                }
 
-            player.increaseCredits(stealItem.getAmountOfPoints());
-            targetPlayers.get(0).decreaseCredit(stealItem.getAmountOfPoints());
+                //multisteal ? sounds like fun ;)
+                for (Player targetedPlayer : targetPlayers) {
+                    player.increaseCredits(stealItem.getAmountOfPoints());
+                    targetedPlayer.decreaseCredit(stealItem.getAmountOfPoints());
+                }
+                returnMessage = "Slappage für alle !! \n" + player.getName() + " erleichert ALLE anderen Spieler um " + stealItem.getAmountOfPoints() + " Punkte  !";
+            } else {
+                final PointSteal stealItem = (PointSteal) item;
 
-        }
-        else if (item instanceof MultiPointSteal) {
-            final MultiPointSteal stealItem = (MultiPointSteal) item;
+                if (targetPlayers.isEmpty()) {
+                    return null;
+                }
 
-            if (targetPlayers.isEmpty()) {
-                return;
-            }
-
-            //multisteal ? sounds like fun ;)
-            for (Player targetedPlayer : targetPlayers) {
                 player.increaseCredits(stealItem.getAmountOfPoints());
-                targetedPlayer.decreaseCredit(stealItem.getAmountOfPoints());
+                targetPlayers.get(0).decreaseCredit(stealItem.getAmountOfPoints());
+                returnMessage = "Ouch ... " + targetPlayers.get(0).getName() + " wurde durch " + player.getName() + " um " + stealItem.getAmountOfPoints() + " erleichtert !";
             }
-        }
-        else if(item instanceof GoldCard) {
+
+        } else if (item instanceof GoldCard) {
+            Integer amountOfPoints = 0;
             final GoldCard goldCard = (GoldCard) item;
-            player.increaseCredits(goldCard.getPoints());
+            amountOfPoints = goldCard.getPoints();
+            player.increaseCredits(amountOfPoints);
+            returnMessage = "Ka-tsching !! " + player.getName() + " ist um " + amountOfPoints + " reicher geweorden !!";
+        } else if (item instanceof DoublingSeason) {
+            returnMessage = "Oh es ist " + item.getName() + "\n" + targetPlayers.get(0).getName() + " guten Durst ! PROST !";
+        } else if (item instanceof FreeCard) {
+            returnMessage = player.getName() + " hat das Getränk geschickt umgangen (Weichei)";
+        } else if (item instanceof Execution) {
+            returnMessage = player.getName() + " exekutiert " + targetPlayers.get(0).getName() + " ! PROST !";
+        } else if (item instanceof FortuneWheel) {
+            //toDo: Implement Wheel of Fortune !!
+        } else if (item instanceof ComboBreaker) {
+            returnMessage = item.getName() + " " + player.getName() + " genießt Narrenfreiheit (vorerst)!";
         }
 
         player.getItems().remove(item);
+        return returnMessage;
     }
 }

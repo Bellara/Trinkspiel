@@ -9,7 +9,7 @@ public class PointSteal implements Item{
     private Integer amountOfPoints;
 
     public PointSteal() {
-        this.amountOfPoints = 2;
+        this(2);
     }
 
     public PointSteal(Integer amountOfPoints) {
@@ -22,5 +22,15 @@ public class PointSteal implements Item{
 
     public void setAmountOfPoints(Integer amountOfPoints) {
         this.amountOfPoints = amountOfPoints;
+    }
+
+    @Override
+    public String getName() {
+        return "Dieb";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Zieht einem Spieler/Spielerin " + amountOfPoints + " Punkte ab und fügt Sie dem Anwender hinzu.";
     }
 }

@@ -2,6 +2,7 @@ import de.lauverngers.objects.Game;
 import de.lauverngers.objects.Player;
 import de.lauverngers.objects.items.GoldCard;
 import de.lauverngers.objects.items.Item;
+import de.lauverngers.objects.items.MultiPointSteal;
 import de.lauverngers.objects.items.PointSteal;
 
 import java.io.IOException;

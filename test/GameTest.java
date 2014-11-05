@@ -20,6 +20,7 @@ public class GameTest extends Test{
 
         final Challenge challenge = gameTest.getGame().nextRound();
 
+        assert challenge != null;
         assert gameTest.getGame().getCurrentPlayer().equals(playerOne);
 
         gameTest.getGame().getOnGoingChallenges();
