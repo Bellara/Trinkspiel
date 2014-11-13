@@ -21,6 +21,10 @@ public class Die {
         return eyes;
     }
 
+    public static int throwFairDice() {
+        return 4;
+    }
+
     public static int throwSingleDie() {
         return throwDie(null);
     }

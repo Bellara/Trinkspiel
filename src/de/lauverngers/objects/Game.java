@@ -58,13 +58,59 @@ public class Game {
         handleChallengeLifeTimeDecrease();
 
         if (players.size() > 0) {
+            if (players.size() >= 3) {
+                final Integer diceRoll = Die.throwDie(100);
 
-            //choose player by random (very random, much dice, wow)
-            currentPlayer = players.get(Die.throwDice(players.size(), 1));
+                if (diceRoll < 70) {
+                    currentPlayer = getRandomPlayer(true);
+                } else {
+                    currentPlayer = getRandomPlayer(false);
+                }
 
+            } else {
+                currentPlayer = getRandomPlayer(false);
+            }
             return getRandomChallenge();
         }
         return null;
+    }
+
+    private Player getRandomPlayer(boolean isSemiRandom) {
+        if (isSemiRandom) {
+            //cose player semi-random to give player with fewer points more chances to get a turn
+            return getSemiRandomPlayer();
+        } else {
+            //choose player by random (very random, much dice, wow)
+            return getRandomPlayer();
+        }
+    }
+
+    private Player getSemiRandomPlayer() {
+
+        //player points sorted list
+        final List<Player> tmpPlayerList = new ArrayList<>();
+        tmpPlayerList.addAll(players);
+        Collections.sort(tmpPlayerList, PLAYER_POINTS_COMPARATOR);
+
+        //club cant handle me right now !
+        final List<Player> worstThreePerforming = tmpPlayerList.subList(0, 3);
+
+        final Integer diceRoll = Die.throwDie(100);
+
+        if (diceRoll < 60) {
+            return worstThreePerforming.get(0);
+        } else {
+            if (diceRoll < 20) {
+                return worstThreePerforming.get(1);
+            } else {
+                return worstThreePerforming.get(2);
+            }
+        }
+    }
+
+
+    private Player getRandomPlayer() {
+        return players.get(Die.throwDice(players.size(), 1));
     }
 
     private Challenge getRandomChallenge() {
@@ -250,4 +296,30 @@ public class Game {
         player.getItems().remove(item);
         return returnMessage;
     }
+
+    private static final Comparator PLAYER_POINTS_COMPARATOR = new Comparator() {
+        public int compare(Object o1, Object o2) {
+            if (o1 == null && o2 == null) {
+                return 0;
+            }
+            if (o1 == null) {
+                return 1;
+            }
+            if (o2 == null) {
+                return -1;
+            }
+            final Player player1 = (Player) o1;
+            final Player player2 = (Player) o2;
+            if (player1.getCredits() == null && player2.getCredits() == null) {
+                return 0;
+            }
+            if (player1.getCredits() != null && player2.getCredits() == null) {
+                return 1;
+            }
+            if (player1.getCredits() == null && player2.getCredits() != null) {
+                return -1;
+            }
+            return player1.getCredits().compareTo(player2.getCredits());
+        }
+    };
 }

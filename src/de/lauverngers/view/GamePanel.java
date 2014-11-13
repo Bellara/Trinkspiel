@@ -24,23 +24,23 @@ public class GamePanel extends JPanel {
         creationFrame.add(initLabel());
     }
 
-    private JLabel initLabel(){
+    private JLabel initLabel() {
         JLabel label = new JLabel("Zerschepperung");
         label.setBackground(Color.BLACK);
         label.setFont(CUSTOM_FONT);
         return label;
     }
 
-    protected void addComponentToPanel(Component component){
+    protected void addComponentToPanel(Component component) {
         creationFrame.add(component);
     }
 
-    public void showPanel(){
+    public void showPanel() {
         creationFrame.setVisible(true);
     }
 
 
-    private Dimension getMaximumScreenSize(){
+    private Dimension getMaximumScreenSize() {
         return Toolkit.getDefaultToolkit().getScreenSize();
     }
 }

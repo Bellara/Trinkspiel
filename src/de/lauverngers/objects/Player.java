@@ -11,7 +11,7 @@ import java.util.List;
 public class Player {
 
     private String name;
-    private int credits;
+    private Integer credits;
     private List<Item> items = new ArrayList<>();
 
     public Player(String name, int credits) {
@@ -35,11 +35,11 @@ public class Player {
         this.name = name;
     }
 
-    public int getCredits() {
+    public Integer getCredits() {
         return credits;
     }
 
-    public void setCredits(int credits) {
+    public void setCredits(Integer credits) {
         this.credits = credits;
     }
 
